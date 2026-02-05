@@ -3,7 +3,7 @@
 
 %% Process behavioral spreadsheet
 %% Load Excel behavioral table
-behav_fname = '/data/neurogroup/parklab/social_data_fMRI_Oct25_BBODI.xlsx';
+behav_fname = 'social_data_fMRI_Oct25_BBODI.xlsx';
 T = readtable(behav_fname, ...
               'Sheet', 'socialdata_Oct2025_clean', ...
               'VariableNamingRule', 'preserve');
@@ -53,12 +53,12 @@ disp(table_labels_social_vr);
 
 %load mni mask
 
-maskfile = '/data/neurogroup/parklab/MNI152_T1_2mm_brain_Mask.nii';
+maskfile = 'MNI152_T1_2mm_brain_Mask.nii';
 mm = niftiread(maskfile);
 bm = find(mm==1);
 
 
-insula_maps_dir = '/data/neurogroup/parklab/PPS_study/ROI_maps/insula_2326'
+insula_maps_dir = '/insula_2326'
 
 maps_CO = containers.Map();
 maps_SZ = containers.Map();
@@ -101,11 +101,11 @@ seed_names = {'insula'};
 % 
 % configs for write NIFTI files
 %derive masks, and rois
-maskfile = '/data/neurogroup/parklab/MNI152_T1_2mm_brain_Mask.nii';
+maskfile = 'MNI152_T1_2mm_brain_Mask.nii';
 info = niftiinfo(maskfile);
 info.Datatype = 'double';
 
-stats_maps_dir = '/data/neurogroup/parklab/analysis/regressionFeb5_InsulaBODDI_IDP_PPS/';
+stats_maps_dir = '/regressionFeb5_InsulaBODDI_IDP_PPS/';
 
 mkdir(stats_maps_dir);
 
