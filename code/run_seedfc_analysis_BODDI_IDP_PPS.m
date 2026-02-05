@@ -1,5 +1,5 @@
 %This analysis will conduct the analysis to see if there are any relationships
-% between PPS, IDP and BBODI and the insula-whole brain analysis
+% between PPS, IPD and BBODI and the insula-whole brain analysis
 
 %% Process behavioral spreadsheet
 %% Load Excel behavioral table
