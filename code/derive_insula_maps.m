@@ -3,11 +3,11 @@
 
 
 %derive masks, and rois
-maskfile = '/data/neurogroup/parklab/MNI152_T1_2mm_brain_Mask.nii';
+maskfile = 'MNI152_T1_2mm_brain_Mask.nii';
 mm = niftiread(maskfile);
 bm = find(mm==1);
 
-insula_roi=niftiread("/data/neurogroup/parklab/ROIs/INSULA_ROI_AAL3.nii");
+insula_roi=niftiread("INSULA_ROI_AAL3.nii");
 
 insula_vox=find(insula_roi>0);
 
@@ -15,15 +15,15 @@ insula_vox=find(insula_roi>0);
 
 % Now we will prep the data to loop through the subjects
 
-proc_dir = '/data/neurogroup/parklab_tmp/';
+proc_dir = 'put path of data here';
 
 sub_list= dir([proc_dir,'sub*']);
 %%
 % write the correlation maps (all together)
-corrmaps_dir = '/data/neurogroup/parklab/PPS_study/ROI_maps/insula_2326/';
+corrmaps_dir = '/insula_2326/';
 mkdir(corrmaps_dir)  
 % write Ymat files
-Ymat_dir = '/data/neurogroup/parklab/PPS_study/Ymats/insula_2326';
+Ymat_dir = 'insula_2326';
 mkdir(Ymat_dir);
 
 for qq=5:32
