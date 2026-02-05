@@ -82,8 +82,6 @@ for jj = 1: length(MRI_id)
 
 end
 
-
-
 maps_SZ('insula') = all_insula_mat(group_bool==1,:);
 maps_CO('insula') = all_insula_mat(group_bool==0,:);
 
@@ -163,8 +161,6 @@ for cc=1:size(social_vr,2)
     % turn these into t-values and p-values (uncorrected) -> later run FDR
     vol_tmap_insula = zeros(91,109,91);
     vol_tmap_insula(bm) = t_stat_insula;
-
-
 
     if ifsaving_volume
         % Insula
@@ -285,7 +281,7 @@ for cc=1:size(social_vr,2) % inds in social_vr
     n = size(XX,1);     
     p = size(XX,2);
     c = [0 0 0 0 1]';
-%     tcritical = tinv(1-(0.001/2),n-p);
+%   tcritical = tinv(1-(0.001/2),n-p);
     tcritical = tinv(1-(alpha_p/2),n-p);
     tcritical_group=tcritical;
 
